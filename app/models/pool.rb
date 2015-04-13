@@ -6,6 +6,7 @@ class Pool < ActiveRecord::Base
   has_many :invitations
   validates :name, presence: true
   validates :pool_amount, presence: true
+  validates :member_limit, presence: true
   accepts_nested_attributes_for :invitations, reject_if: proc { |attributes| attributes['guest'].blank? }
 
   # def amt_to_pay
